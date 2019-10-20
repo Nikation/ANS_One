@@ -18,5 +18,19 @@
     <ClCompile Include="test.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="itcast_asn1_der.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="itcastderlog.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="itcast_asn1_der.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="itcastderlog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
