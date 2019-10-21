@@ -1,14 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
@@ -16,45 +8,80 @@
     <Filter Include="Comm">
       <UniqueIdentifier>{79f14adc-7dc0-4f02-a57a-136d8d47df86}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FactoryofCode">
+      <UniqueIdentifier>{eeae00b2-cc69-4607-837b-bd3f2baae3ac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="ccp">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BaseASN1.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
     </ClCompile>
     <ClCompile Include="Codec.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
     </ClCompile>
     <ClCompile Include="ItcastLog.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
     </ClCompile>
     <ClCompile Include="test.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
     </ClCompile>
     <ClCompile Include="SequenceASN1.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
     </ClCompile>
     <ClCompile Include="RequestCodec.cpp">
-      <Filter>源文件</Filter>
+      <Filter>ccp</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryCode.cpp">
+      <Filter>FactoryofCode</Filter>
+    </ClCompile>
+    <ClCompile Include="RespondFactory.cpp">
+      <Filter>FactoryofCode</Filter>
+    </ClCompile>
+    <ClCompile Include="RequestFactory.cpp">
+      <Filter>FactoryofCode</Filter>
+    </ClCompile>
+    <ClCompile Include="RespondCodec.cpp">
+      <Filter>ccp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseASN1.h">
-      <Filter>头文件</Filter>
+      <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="Codec.h">
-      <Filter>头文件</Filter>
+      <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="ItcastLog.h">
-      <Filter>头文件</Filter>
+      <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="SequenceASN1.h">
-      <Filter>头文件</Filter>
+      <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="RequestCodec.h">
-      <Filter>头文件</Filter>
+      <Filter>h</Filter>
     </ClInclude>
     <ClInclude Include="comm.h">
       <Filter>Comm</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryCode.h">
+      <Filter>FactoryofCode</Filter>
+    </ClInclude>
+    <ClInclude Include="RespondFactory.h">
+      <Filter>FactoryofCode</Filter>
+    </ClInclude>
+    <ClInclude Include="RequestFactory.h">
+      <Filter>FactoryofCode</Filter>
+    </ClInclude>
+    <ClInclude Include="RespondCodec.h">
+      <Filter>h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

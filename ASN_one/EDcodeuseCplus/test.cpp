@@ -5,12 +5,14 @@
 #include<string>
 #include"RequestCodec.h"
 #include"comm.h"
+#include"FactoryCode.h"
+#include"RequestFactory.h"
 using namespace std;
 
 //测试请求报文编解码
 int main()
 {
-	Codec *code = NULL;
+ 	Codec *code = NULL;
 	char *outData = NULL;
 	int outDataLen = 0;
 
@@ -22,7 +24,9 @@ int main()
 	strcpy(msg.r1, "hhhsssjjjkkkoooppp");
 	strcpy(msg.authCode, "121221");
 	//1.编码
-	code = new RequestCodec(&msg);
+	//code = new RequestCodec(&msg);
+	FactoryCode* factory = new RequestFactory;
+	code = factory->CreateCode(&msg);
 	code->msgEncode(&outData, outDataLen);
 	//写入文件
 	writecodeTofile("./test.ber", (unsigned char*)outData, outDataLen);
@@ -34,7 +38,8 @@ int main()
 	code = NULL;
 
 	//2.解码
-	code = new RequestCodec;
+	//code = new RequestCodec();
+	code = factory->CreateCode(NULL);
 	RequestMsg *prmsg = static_cast<RequestMsg*>(code->msgDecode(outData, outDataLen));
 	cout << "cmdType: " << prmsg->cmdType << endl;
 	cout << "clientId: " << prmsg->clientId << endl;

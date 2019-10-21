@@ -11,7 +11,7 @@ RequestCodec::RequestCodec()
 	mRequestMsg = new RequestMsg;
 	if (NULL == mRequestMsg)
 	{
-		cout << "RequestCodec new failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, -1, "new obj is err: ");
 		return;
 	}
 
@@ -26,7 +26,7 @@ RequestCodec::RequestCodec(RequestMsg * msg)
 	mRequestMsg = new RequestMsg;
 	if (NULL == mRequestMsg)
 	{
-		cout << "RequestCodec new failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, -1, "new obj err");
 		return;
 	}
 
@@ -61,7 +61,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = writeHeadNode(mRequestMsg->cmdType);
 	if (0 != ret)
 	{
-		cout << "writeHeadNode failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "writeHeadNode err");
 		return -1;
 	}
 
@@ -69,7 +69,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = writeNextNode(mRequestMsg->clientId, strlen(mRequestMsg->clientId));
 	if (0 != ret)
 	{
-		cout << "writeNextNode failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "writeNextNode err");
 		return -1;
 	}
 
@@ -78,7 +78,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = writeNextNode(mRequestMsg->authCode, strlen(mRequestMsg->authCode));
 	if (0 != ret)
 	{
-		cout << "writeNextNode failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "writeNextNode err");
 		return -1;
 	}
 
@@ -86,7 +86,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = writeNextNode(mRequestMsg->serverId, strlen(mRequestMsg->serverId));
 	if (0 != ret)
 	{
-		cout << "writeNextNode failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "writeNextNode err");
 		return -1;
 	}
 
@@ -94,7 +94,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = writeNextNode(mRequestMsg->r1, strlen(mRequestMsg->r1));
 	if (0 != ret)
 	{
-		cout << "writeNextNode failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "writeNextNode err");
 		return -1;
 	}
 
@@ -102,7 +102,7 @@ int RequestCodec::msgEncode(char ** outData, int & len)
 	ret = packSequence(outData, len);
 	if (0 != ret)
 	{
-		cout << "packSequence failed.." << endl;
+		mLog.Log(__FILE__, __LINE__, ItcastLog::ERROR, ret, "packSequence err");
 		return -1;
 	}
 
