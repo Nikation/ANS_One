@@ -60,6 +60,7 @@ int TeacherEncode(teacher_t *t, unsigned char **outData, int *outLen)
 	}
 	//age
 	tmp = head;
+	//ret = DER_ItAsn1_WriteInteger(t->age, &(tmp->next));
 	ret = DER_ItAsn1_WriteInteger(t->age, &tmpNode);
 	if (-1 == ret)
 	{
@@ -293,7 +294,7 @@ int testofTeacherEnDecode()
 	printf("解码成功..\n");
 	printf("name: %s ,age: %d ,p: %s, pLen: %d \n", pTeacher->name
 		, pTeacher->age
-		, pTeacher->p
+		, (char*)pTeacher->p
 		, pTeacher->pLen);
 
 	//3验证解码是否ok
